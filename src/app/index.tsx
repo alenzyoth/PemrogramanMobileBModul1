@@ -1,11 +1,35 @@
-import { View, Text, TextInput, Button } from "react-native";
+import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 
 export default function Index() {
   return (
-    <View>
-      <Text>Hello World</Text>
-      <TextInput placeholder="Type here..." />
+    <View style={styles.container}>
+      <Text style={styles.title}>Hello World</Text>
+      <TextInput placeholder="Type here..." style={styles.input} />
       <Button title="Click Me" />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#e0f2fe",
+    justifyContent: "center",
+    padding: 20,
+  },
+  title: {
+    fontSize: 32,
+    fontWeight: "bold",
+    color: "red",
+    marginBottom: 20,
+    textAlign: "center",
+  },
+  input: {
+    borderWidth: 2,
+    borderColor: "blue",
+    backgroundColor: "white",
+    padding: 10,
+    borderRadius: 10,
+    marginBottom: 20,
+  },
+});
