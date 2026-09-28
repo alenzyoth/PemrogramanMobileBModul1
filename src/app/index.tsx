@@ -1,11 +1,23 @@
-import { View, Text, TextInput, Button, StyleSheet } from "react-native";
+import { View, Text, TextInput, Pressable, StyleSheet } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Hello World</Text>
-      <TextInput placeholder="Type here..." style={styles.input} />
-      <Button title="Click Me" />
+      <View style={styles.card}>
+        <Ionicons
+          name="information-circle"
+          size={48}
+          color="#2563eb"
+          style={styles.icon}
+        />
+        <Text style={styles.title}>Hello World</Text>
+        <TextInput placeholder="Type here..." style={styles.input} />
+        <Pressable style={styles.button} onPress={() => console.log("Clicked")}>
+          <Ionicons name="hand-left" size={20} color="white" />
+          <Text style={styles.buttonText}>Click Me</Text>
+        </Pressable>
+      </View>
     </View>
   );
 }
@@ -17,8 +29,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     padding: 20,
   },
+  card: {
+    backgroundColor: "white",
+    padding: 20,
+    borderRadius: 16,
+    alignItems: "center",
+  },
+  icon: {
+    marginBottom: 12,
+  },
   title: {
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: "bold",
     color: "red",
     marginBottom: 20,
@@ -31,5 +52,21 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     marginBottom: 20,
+    width: "100%",
+  },
+  button: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+    backgroundColor: "#2563eb",
+    padding: 12,
+    borderRadius: 10,
+    width: "100%",
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "bold",
   },
 });
